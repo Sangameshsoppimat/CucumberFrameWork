@@ -1,0 +1,6 @@
+pageObjects\CustomersPage.class
+pageObjects\LoginPage.class
+stepDefintions\CommonMethods.class
+pageObjects\SearchCustomerPage.class
+stepDefintions\Steps.class
+testRunner\Runtest.class
