@@ -10,8 +10,8 @@ import io.cucumber.testng.CucumberOptions;
 		glue="stepDefintions",
 		dryRun=false,
 		monochrome=true,
-		plugin= {"pretty"},
-		tags= "@Sanity"
+		plugin= {"pretty"}
+		
 		)
 public class Runtest extends AbstractTestNGCucumberTests
 {

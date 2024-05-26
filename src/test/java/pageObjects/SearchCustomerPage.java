@@ -88,10 +88,10 @@ public class SearchCustomerPage
 	public boolean SerchcustomerListfnamelname(String custname)
 	{
 		boolean flag = false;
-		for(int i=1;i<getrownum();i++)
+		for(int i=1;i<=getrownum();i++)
 		{
-			String name = driver.findElement(By.xpath("//div[@class='dataTables_scroll']//tbody//tr["+i+"]//td[3]")).getText();
-			String[] names = name.split("");
+			String name = table.findElement(By.xpath("//div[@class='dataTables_scroll']//tbody//tr["+i+"]//td[3]")).getText();
+			String[] names = name.split(" ");
 			if(names[0].equalsIgnoreCase("James")&&names[1].equalsIgnoreCase("Pan"))
 			{
 				flag=true;

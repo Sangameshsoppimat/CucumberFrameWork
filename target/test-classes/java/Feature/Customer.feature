@@ -23,7 +23,7 @@ And user click on Search button
 Then user should find customer info in search list
 And close browser
 
-@Sanity
+
 Scenario: Search customer by Firstname and Lastname
 When user enter Firstname
 When user enter Lastname
