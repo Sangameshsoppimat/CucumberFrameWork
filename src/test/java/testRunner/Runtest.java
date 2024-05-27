@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
-		features="C:\\Users\\sande\\eclipse-workspace\\CucumberPracticeYTpavan\\src\\test\\java\\java\\Feature\\Customer.feature",
+		features="C:\\Users\\sande\\eclipse-workspace\\CucumberPracticeYTpavan\\src\\test\\java\\java\\Feature\\Login.feature",
 		glue="stepDefintions",
 		dryRun=false,
 		monochrome=true,

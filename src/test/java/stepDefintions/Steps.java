@@ -63,13 +63,21 @@ public class Steps
 	}
 
 	@Then("user enters username as {string} and password as {string}")
-	public void user_enters_username_as_and_password_as(String username, String password) 
-	{
+	public void user_enters_username_as_and_password_as(String username, String password) {
 		lp=new LoginPage(driver);
 		lp.enterUname(username);
 		lp.enterPassword(password);
+	}
+	
+	@When("User enters valid username as {string} and password as {string}")
+	public void user_enters_valid_username_as_and_password_as(String emails, String passwords) {
+		lp=new LoginPage(driver);
+		lp.enterUname(emails);
+		lp.enterPassword(passwords);
+	}
+	@When("click on login button")
+	public void click_on_login_button() {
 		lp.clickLoginbutton();
-	    
 	}
 
 	@Then("user click on Customer menu item")
