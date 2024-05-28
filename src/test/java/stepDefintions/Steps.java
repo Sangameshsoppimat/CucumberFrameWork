@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +18,7 @@ import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.CustomersPage;
 import pageObjects.LoginPage;
+import pageObjects.OrdersPage;
 import pageObjects.SearchCustomerPage;
 
 public class Steps 
@@ -26,10 +28,13 @@ public class Steps
 	public CustomersPage cp;
 	public SearchCustomerPage sc;
 	public Properties conprop;
+	public OrdersPage op;
+	
 	
 	@Before
 	public void setup() throws IOException
 	{
+		
 		conprop=new Properties();
 		FileInputStream fis=new FileInputStream("C:\\Users\\sande\\eclipse-workspace\\CucumberPracticeYTpavan\\Config.proprties");
 		conprop.load(fis);
@@ -58,6 +63,7 @@ public class Steps
 	@Then("user open URL {string}")
 	public void user_open_url(String URL) 
 	{
+		
 		driver.get(URL);
 	 
 	}
@@ -180,6 +186,32 @@ public class Steps
 	    Assert.assertEquals(true, fnamelnamestatu);
 	}
 
+	
+	@Then("user click on sales menu item")
+	public void user_click_on_sales_menu_item() {
+		op=new OrdersPage(driver);
+		op.clickOnsalesMenu();
+	}
+	@Then("user click on orders menu")
+	public void user_click_on_orders_menu() {
+	    op.clickOnOrders();
+	}
+	@Then("user be navigated orders page and verify orders page")
+	public void user_be_navigated_orders_page_and_verify_orders_page() {
+	    String actTitle = driver.getTitle();
+	    String expTitle = "Orders / nopCommerce administration";
+	    Assert.assertEquals(actTitle, expTitle);
+	    
+	}
+	@Then("user click on view button based on order status")
+	public void user_click_on_view_button_based_on_order_status() throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		op.clickOnview("Arthur Holmes");
+		
+	    
+	}
+	
 	@Then("close browser")
 	public void close_browser() 
 	{
